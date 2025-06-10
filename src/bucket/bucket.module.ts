@@ -1,9 +1,12 @@
-import { Module } from '@nestjs/common';
+import { Module }           from '@nestjs/common';
+import { TypeOrmModule }    from '@nestjs/typeorm';
+import { Bucket }           from './entities/bucket.entity';
+import { BucketService }    from './bucket.service';
 import { BucketController } from './bucket.controller';
-import { BucketService } from './bucket.service';
 
 @Module({
-  controllers: [BucketController],
-  providers: [BucketService]
+  imports: [TypeOrmModule.forFeature([Bucket])],
+  providers: [BucketService],
+  controllers:[BucketController],
 })
 export class BucketModule {}
