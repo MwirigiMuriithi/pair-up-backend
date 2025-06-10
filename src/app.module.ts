@@ -5,13 +5,13 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
+import { JourneyModule } from './journey/journey.module';
 import { AppService }    from './app.service';
 
 import { AuthModule }    from './auth/auth.module';
 import { UsersModule }   from './users/users.module';
 import { GroupsModule }  from './groups/groups.module';
 import { TodayModule }   from './today/today.module';
-import { EventsModule }  from './events/events.module';
 import { BucketModule }  from './bucket/bucket.module';
 import { HeartsModule }  from './hearts/hearts.module';
 import { DreamsModule }  from './dreams/dreams.module';
@@ -36,10 +36,10 @@ import { DreamsModule }  from './dreams/dreams.module';
     UsersModule,
     GroupsModule,
     TodayModule,
-    EventsModule,
     BucketModule,
     HeartsModule,
     DreamsModule,
+    JourneyModule,
   ],
   controllers: [AppController],
   providers:    [AppService],
